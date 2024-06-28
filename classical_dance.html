@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classical Dance Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Classical Dance Portfolio</h1>
+            <p>Exploring the grace and elegance of classical dance forms.</p>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>As a classical dancer, I immerse myself in the rich traditions of dance that tell stories, evoke emotions, and connect us to our cultural heritage. My journey in classical dance is a testament to the beauty of disciplined art and the timelessness of its expression.</p>
+    </section>
+
+    <section id="my-dance-gallery" class="container">
+        <h2>My Dance Gallery</h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-card" onclick="openModal(this)">
+                <img src="classical_dance1.jpg" alt="Classical Dance Performance 1">
+                <p>Classical Dance Performance 1</p>
+            </div>
+
+            <div class="portfolio-card" onclick="openModal(this)">
+                <img src="classical_dance2.jpg" alt="Classical Dance Performance 2">
+                <p>Classical Dance Performance 2</p>
+            </div>
+
+            <!-- Add more performance images as needed -->
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="img01">
+        </div>
+    </section>
+
+    <section id="create-portfolio" class="container">
+        <h2>Create New Portfolio</h2>
+        <form action="createPortfolio.html" method="post" id="create-portfolio-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" name="image" required>
+            
+            <button type="submit">Create Portfolio</button>
+        </form>
+    </section>
+
+    <script>
+        function openModal(element) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = element.children[0].src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
